@@ -1043,24 +1043,36 @@ footer {
 
   <!-- ✅ JavaScript -->
   <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const body = document.body;
+     const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const body = document.body;
 
-    const toggleMenu = () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-      body.classList.toggle('lock-scroll');
-    };
+  // Toggle navbar menu
+  function toggleMenu() {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    body.classList.toggle('lock-scroll');
+  }
 
-    menuToggle.addEventListener('click', toggleMenu);
+  // Click on hamburger icon
+  menuToggle.addEventListener('click', toggleMenu);
 
-    menuToggle.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleMenu();
-      }
+  // Enter / Space key accessibility
+  menuToggle.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  // ✅ Close navbar when any link is clicked (for mobile)
+  document.querySelectorAll('#nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      body.classList.remove('lock-scroll');
     });
+  });
 
 
 
