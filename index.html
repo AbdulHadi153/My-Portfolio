@@ -176,9 +176,11 @@ nav .logo {
 .hero .image img {
   width: 100%;
   max-width: 380px;
+  aspect-ratio: 1 / 1; /* ensures square */
   border-radius: 50%;
   border: 4px solid #00c98a;
   box-shadow: 0 10px 30px rgba(0, 201, 138, 0.3);
+  object-fit: cover; /* crop and fit inside circle */
 }
 
 /* Responsive */
@@ -198,6 +200,7 @@ nav .logo {
 
   .hero .image img {
     max-width: 260px;
+    aspect-ratio: 1 / 1; /* square for perfect circle */
   }
 }
 
@@ -718,7 +721,7 @@ footer {
       <h2>I'm Abdul Hadi</h2>
       <div id="typed"></div>
       <p>
-        I design and develop high-performance, user-friendly websites that solve real business challenges, boost engagement, and drive measurable growth using HTML, CSS, JavaScript, PHP, Laravel, and ASP.NET Core.
+        I design and develop high performance, user friendly websites that solve real business challenges, boost engagement, and drive measurable growth using HTML, CSS, JavaScript, PHP, Laravel, and ASP.NET Core.
       </p>
       <a href="#contact" class="hero-btn">LET’S WORK TOGETHER</a>
 
@@ -739,10 +742,10 @@ footer {
       <div class="about-content">
        <div class="about-text">
   <p>
-    I'm <strong>Abdul Hadi</strong>, a passionate full-stack web and mobile app developer creating responsive, user-centric, and high-performance digital solutions. I specialize in front-end and back-end technologies including <strong>HTML, CSS, JavaScript, PHP, Laravel, ASP.NET Core, ASP.NET Web API, Flutter, Dart, and Azure</strong>.
+    I'm <strong>Abdul Hadi</strong>, a passionate full stack web and mobile app developer creating responsive, user centric, and high performance digital solutions. I specialize in front end and back end technologies including <strong>HTML, CSS, JavaScript, PHP, Laravel, ASP.NET Core, ASP.NET Web API, Flutter, Dart, and Azure</strong>.
   </p>
   <p>
-    I’ve collaborated with clients across diverse industries to build websites and mobile applications that solve real business challenges. From custom WordPress themes and e-commerce platforms to cloud-based solutions, API integrations, and mobile apps, I deliver clean code, attractive design, and measurable business impact.
+    I’ve collaborated with clients across diverse industries to build websites and mobile applications that solve real business challenges. From custom WordPress themes and e commerce platforms to cloud based solutions, API integrations, and mobile apps, I deliver clean code, attractive design, and measurable business impact.
   </p>
   <p>
     Let’s work together to turn your ideas into scalable, efficient, and impactful digital solutions.
@@ -1021,7 +1024,7 @@ footer {
     <div class="footer-column about">
       <h3>About Me</h3>
       <p>
-        I'm Abdul Hadi, a passionate full-stack web developer crafting responsive, visually appealing, and high-performing digital solutions. Let's create something amazing together!
+        I'm Abdul Hadi, a passionate full stack web developer crafting responsive, visually appealing, and high performing digital solutions. Let's create something amazing together!
       </p>
       <div class="social-icons">
         <a href="https://www.facebook.com/profile.php?id=61577362109598" target="_blank" aria-label="Facebook">
@@ -1115,12 +1118,8 @@ allLinks.forEach(link => {
 // Typing effect
 var typed = new Typed("#typed", {
   strings: [
-    "Full-Stack Web Developer",
+    "Full Stack Web Developer",
     "Mobile App Developer",
-    "ASP.NET Core Expert",
-    "Laravel Specialist",  
-    "Freelancer",
-    "Problem Solver"
   ],
   typeSpeed: 50,
   backSpeed: 25,
