@@ -591,6 +591,161 @@ nav .logo {
 }
 
 
+/* certificate */
+/* =================== GENERAL CONTACT SECTION =================== */
+.contact-section {
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #c9d1d9;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #00ffae;
+}
+
+/* =================== CONTACT GRID =================== */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* =================== CONTACT ITEM =================== */
+.contact-item {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 15px;
+  padding: 25px;
+  flex: 1 1 250px;
+  min-width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.2);
+}
+
+.contact-item i {
+  font-size: 2rem;
+  color: #00ffae;
+  margin-bottom: 15px;
+}
+
+.contact-item strong {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.contact-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin-bottom: 10px;
+}
+
+/* =================== CLIENT NAMES BELOW TESTIMONIALS =================== */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.contact-item {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 15px;
+  padding: 25px;
+  flex: 1 1 250px;
+  min-width: 250px;  /* ensures enough space for content */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.2);
+}
+
+.contact-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin-bottom: 10px;
+}
+
+.client-name {
+  display: block;         /* puts below paragraph */
+  white-space: nowrap;    /* keeps full name on one line */
+  font-weight: 600;
+  color: #00ffae;
+  margin-top: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-item {
+    min-width: 100%;     /* make sure client name fits on small screens */
+  }
+}
+
+
+
+/* =================== CTA BANNER =================== */
+.contact-section .cta {
+  display: inline-block;
+  background: #00ffae;
+  color: #0d1117;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.contact-section .cta:hover {
+  background: #00e79f;
+  transform: translateY(-3px);
+}
+.cta {
+  display: inline-block;
+  background: #00ffae;
+  color: #0d1117;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.cta:hover {
+  background: #00e79f;
+  transform: translateY(-3px);
+}
+
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    max-width: 100%;
+  }
+}
+
 /* Contact Section */
 .contact-section {
   background: linear-gradient(135deg, #0d1117, #161b22);
@@ -664,6 +819,29 @@ nav .logo {
   border-color: #00ffae;
 }
 
+/* CTA Button */
+.cta {
+  display: inline-block;
+  background: #00ffae;
+  color: #0d1117;
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.cta:hover {
+  background: #00e79f;
+  transform: translateY(-3px);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-grid {
@@ -675,6 +853,7 @@ nav .logo {
     margin: 0 auto;
   }
 }
+
 
 /* Footer Section */
 footer {
@@ -1109,6 +1288,80 @@ footer {
   </div>
 </section>
 
+<!-- =================== EXPERIENCE / CERTIFICATIONS =================== -->
+<section id="experience" class="contact-section">
+  <h2 class="section-title">Experience & Certifications</h2>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <i class="fas fa-briefcase"></i>
+      <div>
+        <strong>Freelance Web Developer</strong>
+        <p>2022 — Present<br>Worked with local and international clients on responsive websites and web apps.</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-graduation-cap"></i>
+      <div>
+        <strong>Internship / Training</strong>
+        <p>2021<br>Completed web development training in HTML, CSS, PHP, and Laravel.</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <i class="fas fa-certificate"></i>
+      <div>
+        <strong>Certifications</strong>
+        <p>2020 — 2023<br>Web Development, WordPress, and UI/UX Design certificates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TESTIMONIALS =================== -->
+<section id="testimonials" class="contact-section">
+  <h2 class="section-title">Testimonials</h2>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <p>
+        Abdul delivered our website on time and exceeded expectations!<br>
+        The workflow was smooth and professional.
+      </p>
+      <span class="client-name">— John Doe</span>
+    </div>
+    <div class="contact-item">
+      <p>
+        Great communication and clean code. Our business site is faster and looks modern.<br>
+        Highly recommended for any web project.
+      </p>
+      <span class="client-name">— Jane Smith</span>
+    </div>
+    <div class="contact-item">
+      <p>
+        Highly recommend Abdul for any web project. Professional and detail-oriented.<br>
+        The results were exactly what we needed.
+      </p>
+      <span class="client-name">— Michael Lee</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- =================== CALL TO ACTION (CTA BANNER) =================== -->
+<!-- CTA Section -->
+<section class="contact-section" id="cta">
+  <div class="contact-grid" style="justify-content:center;">
+    <div class="contact-item" style="flex:1; max-width:600px; text-align:center;">
+      <h3 style="color:#00ffae; margin-bottom:10px;">Have a project in mind?</h3>
+      <p style="color:#c9d1d9; margin-bottom:15px;">
+        Let’s build something amazing together. I’m available for freelance & remote work.
+      </p>
+      <!-- Smooth Scroll to Contact Section -->
+      <a href="#contact" class="cta">Hire Me</a>
+    </div>
+  </div>
+</section>
+
+
+
 <!-- Contact Section -->
 <section id="contact" class="contact-section">
   <div class="contact-container">
@@ -1130,11 +1383,13 @@ footer {
         <a href="mailto:abdulhadih72590@gmail.com">abdulhadih72590@gmail.com</a>
       </div>
 
-      <!-- Optional: Add more contact methods -->
-      <!-- <div class="contact-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Karachi, Pakistan</span>
-      </div> -->
+      <!-- Hire Me Button -->
+      <div class="contact-item" style="justify-content:center; flex-direction:column;">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulhadih72590@gmail.com&su=Project%20Inquiry&body=Hi%20Abdul,%0A%0AI%20want%20to%20discuss%20a%20project%20with%20you." 
+           target="_blank" class="cta">
+           Hire Me
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1259,6 +1514,8 @@ seeMoreBtn.addEventListener('click', () => {
   seeMoreBtn.style.display = 'none'; // hide button after click
 });
 
+
+// cta
 
 
   </script>
