@@ -204,6 +204,61 @@ nav .logo {
   }
 }
 
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hero-btn,
+.download-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #00c98a, #00f6b3);
+  color: #021014;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover animation - scale and glow */
+.hero-btn:hover,
+.download-btn:hover {
+  transform: scale(1.07);
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 201, 138, 0.6);
+}
+
+/* Download button special hover glow */
+.download-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: all 0.6s;
+  z-index: -1;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* 🌟 About Section */
 .about-section {
   padding: 80px 10%;
@@ -969,23 +1024,27 @@ footer {
 </nav>
 
 
-   <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="text">
-      <span>👋 HELLO THERE</span>
-      <h2>I'm Abdul Hadi</h2>
-      <div id="typed"></div>
-      <p>
-        I design and develop high performance, user friendly websites that solve real business challenges, boost engagement, and drive measurable growth using HTML, CSS, JavaScript, PHP, Laravel, and ASP.NET Core.
-      </p>
+  <!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="text">
+    <span>👋 HELLO THERE</span>
+    <h2>I'm Abdul Hadi</h2>
+    <div id="typed"></div>
+    <p>
+      I design and develop high performance, user friendly websites that solve real business challenges,
+      boost engagement, and drive measurable growth using HTML, CSS, JavaScript, PHP, Laravel, and ASP.NET Core.
+    </p>
+
+    <div class="hero-buttons">
       <a href="#contact" class="hero-btn">LET’S WORK TOGETHER</a>
-
+      <a href="images/Abdul Hadi CV.pdf" class="download-btn" download>📄 DOWNLOAD CV</a>
     </div>
-    <div class="image">
-      <img src="images/pic.png" alt="Abdul Hadi" />
+  </div>
 
-    </div>
-  </section>
+  <div class="image">
+    <img src="images/pic.png" alt="Abdul Hadi" />
+  </div>
+</section>
 
   <!-- About Me Section -->
   <section id="about" class="about-section">
@@ -1310,7 +1369,7 @@ footer {
       <i class="fas fa-certificate"></i>
       <div>
         <strong>Certifications</strong>
-        <p>2020 — 2023<br>Web Development and UI/UX Design certificates.</p>
+        <p>2020 — 2023<br>Web Development, WordPress, and UI/UX Design certificates.</p>
       </div>
     </div>
   </div>
@@ -1522,4 +1581,3 @@ seeMoreBtn.addEventListener('click', () => {
     
 </body>
 </html>
-
