@@ -646,7 +646,6 @@ nav .logo {
 }
 
 
-/* certificate */
 /* =================== GENERAL CONTACT SECTION =================== */
 .contact-section {
   background: linear-gradient(135deg, #0d1117, #161b22);
@@ -706,74 +705,20 @@ nav .logo {
   margin-bottom: 10px;
 }
 
-/* =================== CLIENT NAMES BELOW TESTIMONIALS =================== */
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.contact-item {
-  background: #0d1117;
-  border: 1px solid #21262d;
-  border-radius: 15px;
-  padding: 25px;
-  flex: 1 1 250px;
-  min-width: 250px;  /* ensures enough space for content */
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.2);
-}
-
-.contact-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #c9d1d9;
-  margin-bottom: 10px;
-}
-
+/* =================== CLIENT NAMES =================== */
 .client-name {
-  display: block;         /* puts below paragraph */
-  white-space: nowrap;    /* keeps full name on one line */
+  display: block;
+  white-space: nowrap;
   font-weight: 600;
   color: #00ffae;
   margin-top: 5px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .contact-item {
-    min-width: 100%;     /* make sure client name fits on small screens */
-  }
-}
-
-
-
-/* =================== CTA BANNER =================== */
-.contact-section .cta {
-  display: inline-block;
-  background: #00ffae;
-  color: #0d1117;
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.3s;
-  white-space: nowrap;
-}
-
-.contact-section .cta:hover {
-  background: #00e79f;
-  transform: translateY(-3px);
-}
+/* =================== CTA BUTTON =================== */
 .cta {
   display: inline-block;
   background: #00ffae;
-  color: #0d1117;
+  color: #000 !important; /* Always black text */
   padding: 12px 25px;
   border-radius: 10px;
   font-weight: 700;
@@ -781,10 +726,12 @@ nav .logo {
   transition: 0.3s;
   white-space: nowrap;
   text-align: center;
+  font-family: Arial, sans-serif; /* Arial font */
 }
 
 .cta:hover {
-  background: #00e79f;
+  background: #00e79f; /* Only background changes */
+  color: #000 !important; /* Keep text black on hover */
   transform: translateY(-3px);
 }
 
@@ -1351,53 +1298,91 @@ footer {
 <section id="experience" class="contact-section">
   <h2 class="section-title">Experience & Certifications</h2>
   <div class="contact-grid">
+
+    <!-- Full Stack / Freelance -->
     <div class="contact-item">
       <i class="fas fa-briefcase"></i>
       <div>
-        <strong>Freelance Web Developer</strong>
-        <p>2022 — Present<br>Worked with local and international clients on responsive websites and web apps.</p>
+        <strong>Freelance / Full-Stack Web Developer</strong>
+        <p>2022 — Present<br>
+          Worked with local and international clients to design and develop complete web solutions — from frontend
+          to backend and mobile app integrations. Focused on clean code, responsive design, and performance.
+        </p>
+        <p><b>Technologies:</b> HTML, CSS, JavaScript, Bootstrap, PHP, Laravel, .NET Core MVC, Web API, Flutter, Dart, MySQL, SQL Server</p>
       </div>
     </div>
+
+    <!-- Frontend Development -->
+    <div class="contact-item">
+      <i class="fas fa-laptop-code"></i>
+      <div>
+        <strong>Frontend Developer</strong>
+        <p>Expert in crafting modern, user-friendly interfaces using HTML5, CSS3, JavaScript, Bootstrap, and responsive frameworks.
+          Implemented smooth animations, cross-browser compatibility, and pixel-perfect layouts.</p>
+        <p><b>Skills:</b> HTML5, CSS3, JavaScript (ES6+), Bootstrap 5, AJAX, Responsive Design</p>
+      </div>
+    </div>
+
+    <!-- Backend Development -->
+    <div class="contact-item">
+      <i class="fas fa-server"></i>
+      <div>
+        <strong>Backend Developer (PHP / Laravel / .NET Core)</strong>
+        <p>Developed REST APIs, admin dashboards, and CMS platforms using Laravel and ASP.NET Core MVC.
+          Experienced in authentication, middleware, Eloquent ORM, Entity Framework, and database optimization.</p>
+        <p><b>Skills:</b> PHP, Laravel, MySQL, .NET Core MVC, Web API, SQL Server, RESTful APIs, Authentication</p>
+      </div>
+    </div>
+
+    <!-- Mobile App Development -->
+    <div class="contact-item">
+      <i class="fas fa-mobile-alt"></i>
+      <div>
+        <strong>Mobile App Developer (Flutter / Dart)</strong>
+        <p>Created cross-platform mobile applications using Flutter and Dart with Firebase integration, API handling,
+          and state management for smooth user experiences across Android and iOS devices.</p>
+        <p><b>Skills:</b> Flutter, Dart, Firebase, API Integration, UI Design</p>
+      </div>
+    </div>
+
+    <!-- Internship -->
     <div class="contact-item">
       <i class="fas fa-graduation-cap"></i>
       <div>
         <strong>Internship / Training</strong>
-        <p>2021<br>Completed web development training in HTML, CSS, PHP, and Laravel.</p>
+        <p>2021<br>
+          Completed structured training in web development covering HTML, CSS, JavaScript, PHP, and Laravel, focusing
+          on both frontend and backend concepts.
+        </p>
       </div>
     </div>
+
+    <!-- Certifications -->
     <div class="contact-item">
       <i class="fas fa-certificate"></i>
       <div>
         <strong>Certifications</strong>
-        <p>2020 — 2023<br>Web Development, WordPress, and UI/UX Design certificates.</p>
+        <p>2020 — 2023<br>Certified in Web Development, Laravel, .NET Core, and UI/UX Design.</p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- =================== TESTIMONIALS =================== -->
 <section id="testimonials" class="contact-section">
   <h2 class="section-title">Testimonials</h2>
   <div class="contact-grid">
     <div class="contact-item">
-      <p>
-        Abdul delivered our website on time and exceeded expectations!<br>
-        The workflow was smooth and professional.
-      </p>
+      <p>Abdul delivered our website on time and exceeded expectations!<br>The workflow was smooth and professional.</p>
       <span class="client-name">— John Doe</span>
     </div>
     <div class="contact-item">
-      <p>
-        Great communication and clean code. Our business site is faster and looks modern.<br>
-        Highly recommended for any web project.
-      </p>
+      <p>Great communication and clean code. Our business site is faster and looks modern.<br>Highly recommended for any web project.</p>
       <span class="client-name">— Jane Smith</span>
     </div>
     <div class="contact-item">
-      <p>
-        Highly recommend Abdul for any web project. Professional and detail-oriented.<br>
-        The results were exactly what we needed.
-      </p>
+      <p>Highly recommend Abdul for any web project. Professional and detail-oriented.<br>The results were exactly what we needed.</p>
       <span class="client-name">— Michael Lee</span>
     </div>
   </div>
@@ -1405,15 +1390,11 @@ footer {
 
 
 <!-- =================== CALL TO ACTION (CTA BANNER) =================== -->
-<!-- CTA Section -->
 <section class="contact-section" id="cta">
   <div class="contact-grid" style="justify-content:center;">
     <div class="contact-item" style="flex:1; max-width:600px; text-align:center;">
       <h3 style="color:#00ffae; margin-bottom:10px;">Have a project in mind?</h3>
-      <p style="color:#c9d1d9; margin-bottom:15px;">
-        Let’s build something amazing together. I’m available for freelance & remote work.
-      </p>
-      <!-- Smooth Scroll to Contact Section -->
+      <p style="color:#c9d1d9; margin-bottom:15px;">Let’s build something amazing together. I’m available for freelance & remote work.</p>
       <a href="#contact" class="cta">Hire Me</a>
     </div>
   </div>
