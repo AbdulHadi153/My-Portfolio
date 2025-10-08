@@ -645,110 +645,217 @@ nav .logo {
   
 }
 
-
-/* =================== GENERAL CONTACT SECTION =================== */
-.contact-section {
+/* =================== SECTION STYLES =================== */
+section {
+  padding: 80px 10%;
+  text-align: center;
   background: linear-gradient(135deg, #0d1117, #161b22);
   color: #c9d1d9;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  color: #00ffae;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #c9d1d9;
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+
+/* EXPERIENCE SECTION */
+.experience-section {
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  color: #fff;
   padding: 80px 10%;
   text-align: center;
 }
 
-.section-title {
+.experience-section .section-title h2 {
   font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 50px;
   color: #00ffae;
 }
 
-/* =================== CONTACT GRID =================== */
-.contact-grid {
-  display: flex;
-  flex-wrap: wrap;
+.experience-section .section-title p {
+  color: #c9d1d9;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 30px;
-  justify-content: center;
 }
 
-/* =================== CONTACT ITEM =================== */
-.contact-item {
+.experience-item {
   background: #0d1117;
-  border: 1px solid #21262d;
-  border-radius: 15px;
-  padding: 25px;
-  flex: 1 1 250px;
-  min-width: 250px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0, 255, 174, 0.3);
+  border-radius: 16px;
+  padding: 30px 25px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease;
 }
 
-.contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.2);
+.experience-item::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0%;
+  height: 0%;
+  background: linear-gradient(135deg, #00ffae, #00e6a0);
+  transition: 0.5s ease;
+  border-radius: 16px;
+  z-index: 0;
+  opacity: 0.3;
 }
 
-.contact-item i {
+.experience-item:hover::before {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.experience-item i {
   font-size: 2rem;
   color: #00ffae;
   margin-bottom: 15px;
+  z-index: 1;
+  position: relative;
 }
 
-.contact-item strong {
+.experience-item h3 {
   font-size: 1.2rem;
-  display: block;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #fff;
+  z-index: 1;
+  position: relative;
 }
 
-.contact-item p {
+.experience-item p {
+  color: #c9d1d9;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #c9d1d9;
   margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
 }
 
-/* =================== CLIENT NAMES =================== */
-.client-name {
+.experience-item .duration {
   display: block;
-  white-space: nowrap;
   font-weight: 600;
   color: #00ffae;
   margin-top: 5px;
+  font-size: 0.9rem;
+  z-index: 1;
+  position: relative;
 }
 
-/* =================== CTA BUTTON =================== */
-.cta {
-  display: inline-block;
-  background: #00ffae;
-  color: #000 !important; /* Always black text */
-  padding: 12px 25px;
-  border-radius: 10px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.3s;
-  white-space: nowrap;
-  text-align: center;
-  font-family: Arial, sans-serif; /* Arial font */
+.experience-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.2);
 }
 
-.cta:hover {
-  background: #00e79f; /* Only background changes */
-  color: #000 !important; /* Keep text black on hover */
-  transform: translateY(-3px);
-}
-
-
-/* =================== RESPONSIVE =================== */
+/* Responsive */
 @media (max-width: 768px) {
-  .contact-grid {
-    flex-direction: column;
-    gap: 20px;
+  .experience-grid {
+    grid-template-columns: 1fr;
   }
-
-  .contact-item {
-    max-width: 100%;
+  .experience-item {
+    text-align: center;
   }
 }
 
-/* Contact Section */
+
+/* =================== TESTIMONIALS =================== */
+.testimonials-section {
+  background: linear-gradient(135deg, #0d1117, #161b22);
+  padding: 80px 10%;
+  color: #fff;
+  text-align: center;
+}
+
+.section-title h2 {
+  color: #00ffae;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: #8b949e;
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: #161b22;
+  border-radius: 18px;
+  padding: 35px 25px;
+  border: 1px solid #00ffae33;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: #00ffae;
+  box-shadow: 0 8px 25px rgba(0, 255, 174, 0.3);
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,255,174,0.08) 0%, transparent 70%);
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+
+.testimonial-card:hover::before {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.quote-icon {
+  font-size: 3rem;
+  color: #00ffae;
+  opacity: 0.6;
+  text-align: left;
+  margin-bottom: 10px;
+  font-family: serif;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  margin-bottom: 20px;
+}
+
+.client-name {
+  display: block;
+  font-weight: 600;
+  color: #00ffae;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+
 .contact-section {
   background: linear-gradient(135deg, #0d1117, #161b22);
   color: #fff;
@@ -756,105 +863,63 @@ nav .logo {
   text-align: center;
 }
 
-.contact-section .section-title {
-  margin-bottom: 50px;
-}
-
-.contact-section h2 {
+.section-title h2 {
   font-size: 2.5rem;
   color: #00ffae;
   margin-bottom: 10px;
 }
 
-.contact-section h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #00ffae;
-  margin: 8px auto 0;
-  border-radius: 2px;
-}
-
-.contact-section p {
+.section-title p {
   color: #c9d1d9;
-  font-size: 1rem;
   margin-bottom: 40px;
 }
 
-/* Contact Grid */
-.contact-grid {
+/* Buttons Layout */
+.contact-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 
-/* Contact Item */
-.contact-item {
-  background: #161b22;
-  border-radius: 12px;
-  padding: 25px 30px;
-  width: 250px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #00ffae33;
-}
-
-.contact-item i {
-  font-size: 1.5rem;
-  color: #00ffae;
-}
-
-.contact-item a, .contact-item span {
-  color: #fff;
-  font-size: 1rem;
-  text-decoration: none;
-  word-break: break-word;
-}
-
-.contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 255, 174, 0.4);
-  border-color: #00ffae;
-}
-
-/* CTA Button */
+/* Shared Button Style */
 .cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: #00ffae;
-  color: #0d1117;
+  color: #000 !important;
   padding: 12px 25px;
   border-radius: 10px;
   font-weight: 700;
   text-decoration: none;
   transition: 0.3s;
   white-space: nowrap;
-  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 6px 15px rgba(0, 255, 174, 0.3);
 }
 
 .cta:hover {
   background: #00e79f;
   transform: translateY(-3px);
 }
-html {
-  scroll-behavior: smooth;
-}
 
+/* Icons */
+.cta i {
+  font-size: 1.2rem;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
-  .contact-grid {
-    flex-direction: column;
-    gap: 20px;
+  .section-title h2 {
+    font-size: 2rem;
   }
-  .contact-item {
-    width: 80%;
-    margin: 0 auto;
+  .cta {
+    font-size: 0.95rem;
+    padding: 10px 20px;
   }
 }
+
 
 
 /* Footer Section */
@@ -1294,145 +1359,125 @@ footer {
   </div>
 </section>
 
-<!-- =================== EXPERIENCE / CERTIFICATIONS =================== -->
-<section id="experience" class="contact-section">
-  <h2 class="section-title">Experience & Certifications</h2>
-  <div class="contact-grid">
+<!-- =================== EXPERIENCE & CERTIFICATIONS =================== -->
+<section id="experience" class="experience-section">
+  <div class="section-title">
+    <h2>Experience & Certifications</h2>
+    <p>Highlights of my professional journey and expertise</p>
+  </div>
 
-    <!-- Full Stack / Freelance -->
-    <div class="contact-item">
-      <i class="fas fa-briefcase"></i>
-      <div>
-        <strong>Freelance / Full-Stack Web Developer</strong>
-        <p>2022 — Present<br>
-          Worked with local and international clients to design and develop complete web solutions — from frontend
-          to backend and mobile app integrations. Focused on clean code, responsive design, and performance.
-        </p>
-        <p><b>Technologies:</b> HTML, CSS, JavaScript, Bootstrap, PHP, Laravel, .NET Core MVC, Web API, Flutter, Dart, MySQL, SQL Server</p>
-      </div>
+  <div class="experience-grid">
+    <!-- Card 1 -->
+    <div class="experience-item">
+      <i class="fas fa-code"></i>
+      <h3>Freelance Full-Stack Developer</h3>
+      <p>Developed scalable and performance-driven websites using Laravel, PHP, and JavaScript for clients worldwide. Focused on clean UI and secure backend integration.</p>
+      <span class="duration">2022 — Present</span>
     </div>
 
-    <!-- Frontend Development -->
-    <div class="contact-item">
+    <!-- Card 2 -->
+    <div class="experience-item">
       <i class="fas fa-laptop-code"></i>
-      <div>
-        <strong>Frontend Developer</strong>
-        <p>Expert in crafting modern, user-friendly interfaces using HTML5, CSS3, JavaScript, Bootstrap, and responsive frameworks.
-          Implemented smooth animations, cross-browser compatibility, and pixel-perfect layouts.</p>
-        <p><b>Skills:</b> HTML5, CSS3, JavaScript (ES6+), Bootstrap 5, AJAX, Responsive Design</p>
-      </div>
+      <h3>Frontend Developer – Digital Dreams</h3>
+      <p>Designed modern, responsive interfaces with optimized performance. Implemented interactive UI components and animations using CSS & JS frameworks.</p>
+      <span class="duration">2021 — 2023</span>
     </div>
 
-    <!-- Backend Development -->
-    <div class="contact-item">
+    <!-- Card 3 -->
+    <div class="experience-item">
       <i class="fas fa-server"></i>
-      <div>
-        <strong>Backend Developer (PHP / Laravel / .NET Core)</strong>
-        <p>Developed REST APIs, admin dashboards, and CMS platforms using Laravel and ASP.NET Core MVC.
-          Experienced in authentication, middleware, Eloquent ORM, Entity Framework, and database optimization.</p>
-        <p><b>Skills:</b> PHP, Laravel, MySQL, .NET Core MVC, Web API, SQL Server, RESTful APIs, Authentication</p>
-      </div>
+      <h3>Backend Developer (Laravel / .NET Core)</h3>
+      <p>Built and managed RESTful APIs, admin dashboards, and authentication systems. Specialized in database design, migrations, and Eloquent ORM.</p>
+      <span class="duration">2020 — 2022</span>
     </div>
 
-    <!-- Mobile App Development -->
-    <div class="contact-item">
+    <!-- Card 4 -->
+    <div class="experience-item">
       <i class="fas fa-mobile-alt"></i>
-      <div>
-        <strong>Mobile App Developer (Flutter / Dart)</strong>
-        <p>Created cross-platform mobile applications using Flutter and Dart with Firebase integration, API handling,
-          and state management for smooth user experiences across Android and iOS devices.</p>
-        <p><b>Skills:</b> Flutter, Dart, Firebase, API Integration, UI Design</p>
-      </div>
+      <h3>Mobile App Developer (Flutter / Dart)</h3>
+      <p>Developed cross-platform mobile apps with Firebase integration. Focused on clean architecture, API handling, and responsive layouts for Android & iOS.</p>
+      <span class="duration">2020 — 2021</span>
     </div>
 
-    <!-- Internship -->
-    <div class="contact-item">
+    <!-- Card 5 -->
+    <div class="experience-item">
       <i class="fas fa-graduation-cap"></i>
-      <div>
-        <strong>Internship / Training</strong>
-        <p>2021<br>
-          Completed structured training in web development covering HTML, CSS, JavaScript, PHP, and Laravel, focusing
-          on both frontend and backend concepts.
-        </p>
-      </div>
+      <h3>Certification – Advanced JavaScript</h3>
+      <p>Mastered ES6+, async programming, and API integration. Created dynamic dashboards and real-time data visualizations for client projects.</p>
+      <span class="duration">Certified in 2023</span>
     </div>
 
-    <!-- Certifications -->
-    <div class="contact-item">
+    <!-- Card 6 -->
+    <div class="experience-item">
       <i class="fas fa-certificate"></i>
-      <div>
-        <strong>Certifications</strong>
-        <p>2020 — 2023<br>Certified in Web Development, Laravel, .NET Core, and UI/UX Design.</p>
-      </div>
+      <h3>Certification – WordPress Custom Development</h3>
+      <p>Learned custom theme and plugin development with SEO and performance optimization. Built responsive WordPress websites for business clients.</p>
+      <span class="duration">Certified in 2022</span>
     </div>
   </div>
 </section>
 
 
 <!-- =================== TESTIMONIALS =================== -->
-<section id="testimonials" class="contact-section">
-  <h2 class="section-title">Testimonials</h2>
-  <div class="contact-grid">
-    <div class="contact-item">
-      <p>Abdul delivered our website on time and exceeded expectations!<br>The workflow was smooth and professional.</p>
-      <span class="client-name">— John Doe</span>
+<section id="testimonials" class="testimonials-section">
+  <div class="section-title">
+    <h2>Testimonials</h2>
+    <p>What my clients say about me</p>
+  </div>
+
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p>"Abdul Hadi transformed my business website — it’s fast, elegant, and client-friendly. Highly recommended!"</p>
+      <span class="client-name">— Emily Carter</span>
     </div>
-    <div class="contact-item">
-      <p>Great communication and clean code. Our business site is faster and looks modern.<br>Highly recommended for any web project.</p>
-      <span class="client-name">— Jane Smith</span>
-    </div>
-    <div class="contact-item">
-      <p>Highly recommend Abdul for any web project. Professional and detail-oriented.<br>The results were exactly what we needed.</p>
+
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p>"Excellent communication and top-notch development skills. He understood my vision perfectly!"</p>
       <span class="client-name">— Michael Lee</span>
     </div>
-  </div>
-</section>
 
-
-<!-- =================== CALL TO ACTION (CTA BANNER) =================== -->
-<section class="contact-section" id="cta">
-  <div class="contact-grid" style="justify-content:center;">
-    <div class="contact-item" style="flex:1; max-width:600px; text-align:center;">
-      <h3 style="color:#00ffae; margin-bottom:10px;">Have a project in mind?</h3>
-      <p style="color:#c9d1d9; margin-bottom:15px;">Let’s build something amazing together. I’m available for freelance & remote work.</p>
-      <a href="#contact" class="cta">Hire Me</a>
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p>"Delivered beyond expectations! My e-commerce site looks professional and works smoothly on all devices."</p>
+      <span class="client-name">— Daniel Johnson</span>
     </div>
   </div>
 </section>
 
 
-
-<!-- Contact Section -->
+<!-- =================== CONTACT SECTION =================== -->
 <section id="contact" class="contact-section">
-  <div class="contact-container">
-    <div class="section-title">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out for collaborations or project inquiries.</p>
-    </div>
+  <div class="section-title">
+    <h2>Contact Me</h2>
+    <p>Let's build something amazing together</p>
+  </div>
 
-    <div class="contact-grid">
-      <!-- Phone -->
-      <div class="contact-item">
-        <i class="fas fa-phone-alt"></i>
-        <a href="tel:+923152776869">+92 315 2776869</a>
-      </div>
+  <div class="contact-buttons">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/923152776869" class="cta whatsapp" target="_blank">
+      <i class="fab fa-whatsapp"></i> Hire Me on WhatsApp
+    </a>
 
-      <!-- Email -->
-      <div class="contact-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:abdulhadih72590@gmail.com">abdulhadih72590@gmail.com</a>
-      </div>
-
-      <!-- Hire Me Button -->
-      <div class="contact-item" style="justify-content:center; flex-direction:column;">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdulhadih72590@gmail.com&su=Project%20Inquiry&body=Hi%20Abdul,%0A%0AI%20want%20to%20discuss%20a%20project%20with%20you." 
-           target="_blank" class="cta">
-           Hire Me
-        </a>
-      </div>
-    </div>
+    <!-- Email -->
+    <a href="#" onclick="sendEmail()" class="cta email">
+      <i class="fas fa-envelope"></i> Contact via Email
+    </a>
   </div>
 </section>
+
+<script>
+  function sendEmail() {
+    window.open("https://mail.google.com/mail/?view=cm&fs=1&to=abdulhadih72590@gmail.com");
+  }
+</script>
+
+
+
+
+
+
 
 <footer>
   <div class="footer-container">
