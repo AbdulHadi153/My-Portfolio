@@ -8,6 +8,9 @@
 
 <!-- Font Awesome (for icons if needed later) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <!-- Typed.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
@@ -108,8 +111,6 @@ nav .logo {
     margin: 10px 0;
   }
 }
-
-
 
 /* Hero Section */
 .hero {
@@ -352,180 +353,394 @@ nav .logo {
   }
 }
 
-
-/* what i do */
+/* ======= SERVICES SECTION ======= */
 .services-section {
   background: linear-gradient(135deg, #0d1117, #161b22);
   color: #fff;
-  padding: 80px 0;
+  padding: 100px 8%;
   text-align: center;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-size: 2.6rem;
   color: #00ffae;
-  font-weight: bold;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background: #00ffae;
+  left: 20%;
+  bottom: -8px;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #c9d1d9;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* GRID */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1100px;   /* width limit */
-  margin: 0 auto;      /* center align */
-  padding: 0 20px;     /* thoda andar space */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* CARD DESIGN */
 .service-card {
   background: #161b22;
-  padding: 30px 20px;
-  border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 255, 174, 0.08);
+  padding: 45px 28px;
+  border-radius: 18px;
   border: 1px solid rgba(0, 255, 174, 0.15);
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 255, 174, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.service-card i {
-  font-size: 2.5rem;
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.3);
+  border-color: #00ffae;
+}
+
+.icon-wrapper {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 20px;
+  background: rgba(0, 255, 174, 0.08);
+  border: 1px solid rgba(0, 255, 174, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.icon-wrapper i {
+  font-size: 2.2rem;
   color: #00ffae;
-  margin-bottom: 15px;
+}
+
+.service-card:hover .icon-wrapper {
+  background: linear-gradient(135deg, #00ffae, #00d4ff);
+  box-shadow: 0 0 25px rgba(0, 255, 174, 0.4);
+}
+
+.service-card:hover i {
+  color: #0d1117;
 }
 
 .service-card h3 {
   font-size: 1.3rem;
-  margin-bottom: 10px;
   color: #00ffae;
+  margin-bottom: 10px;
 }
 
 .service-card p {
-  font-size: 0.95rem;
   color: #c9d1d9;
-  line-height: 1.5;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 255, 174, 0.25);
-  border-color: #00ffae;
-}
+/* ======= RESPONSIVENESS ======= */
 
-/* Responsive */
+/* Tablets */
 @media (max-width: 992px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  .service-card {
+    padding: 35px 20px;
   }
 }
 
-@media (max-width: 600px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+/* Mobiles */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 70px 6%;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  .icon-wrapper {
+    width: 65px;
+    height: 65px;
+  }
+  .icon-wrapper i {
+    font-size: 1.8rem;
+  }
+  .service-card h3 {
+    font-size: 1.1rem;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobiles */
+@media (max-width: 480px) {
+  .services-section {
+    padding: 60px 5%;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  .service-card {
+    padding: 30px 18px;
+  }
+  .icon-wrapper {
+    width: 55px;
+    height: 55px;
+  }
+  .icon-wrapper i {
+    font-size: 1.5rem;
   }
 }
 
 
-/* Skills Section */
+/* ================ SKILLS SECTION ================= */
 .skills-section {
-  padding: 80px 10%;
-  background: linear-gradient(135deg, #0d1117, #161b22); /* Hero section jaisa bg */
-  color: #ffffff;
-}
-
-.section-title {
+  padding: 100px 10%;
+  background: radial-gradient(circle at top, #0b0f14 0%, #0d1117 100%);
+  color: #fff;
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #00ffae;
   margin-bottom: 10px;
-  position: relative;
-  display: inline-block;
 }
 
 .section-title h2::after {
   content: "";
   display: block;
-  width: 60%;
+  width: 80px;
   height: 3px;
-  background: #00ffae;
-  margin: 8px auto 0;
-  border-radius: 2px;
+  margin: 10px auto;
+  background: linear-gradient(90deg, #00ffae, #00d4ff);
+  border-radius: 3px;
 }
 
 .section-title p {
-  font-size: 1rem;
   color: #c9d1d9;
+  font-size: 1rem;
+  margin-bottom: 60px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-inline: auto;
 }
 
-/* Skills Grid */
+/* GRID */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 30px;
 }
 
-/* Individual Skill */
-.skill {
-  background: #161b22;
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid #00ffae33;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* SKILL CARD */
+.skill-card {
+  background: rgba(22, 27, 34, 0.65);
+  border: 1px solid rgba(0, 255, 174, 0.18);
+  border-radius: 18px;
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(0, 255, 174, 0.04);
+  transition: all 0.36s ease;
 }
 
-.skill:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 255, 174, 0.4);
-  border-color: #00ffae;
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 34px rgba(0, 255, 174, 0.28);
 }
 
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: 600;
+/* Glow Behind Icon */
+.skill-glow {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 84px;
+  background: radial-gradient(circle, rgba(0,255,174,0.22), transparent 70%);
+  filter: blur(14px);
+  z-index: 0;
+  transition: all 0.36s ease;
 }
 
-.skill-header span:first-child {
-  color: #ffffff;
+.skill-card:hover .skill-glow {
+  transform: translateX(-50%) scale(1.25);
+  opacity: 0.95;
 }
 
-.skill-header .percent {
+/* Icon */
+.skill-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 2.6rem;
   color: #00ffae;
+  margin-bottom: 8px;
+}
+
+/* Flutter & Dart image icons */
+.skill-icon img.skill-img {
+  width: 36px;
+  height: 36px;
+  margin: 0 4px;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 174, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon img.skill-img {
+  transform: scale(1.1);
+}
+
+/* Title */
+.skill-card h3 {
+  position: relative;
+  z-index: 2;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
 }
 
 /* Progress Bar */
 .progress-bar {
+  position: relative;
   width: 100%;
   height: 10px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 6px;
   overflow: hidden;
 }
 
 .progress {
   height: 100%;
-  width: 0; /* optional for animation */
-  background: linear-gradient(90deg, #00ffae, #00d4ff);
+  width: 0;
+  background: linear-gradient(90deg, #00ffae, #00d4ff, #00ffae);
   border-radius: 6px;
-  transition: width 1.5s ease-in-out;
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .section-title h2 {
-    font-size: 28px;
-  }
-  .skill {
-    padding: 15px;
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Percent */
+.percent {
+  display: block;
+  margin-top: 10px;
+  color: #00ffae;
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.4px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* Large Laptops & MacBooks */
+@media (max-width: 1440px) {
+  .skills-section {
+    padding: 90px 8%;
   }
 }
+
+/* Tablets */
+@media (max-width: 992px) {
+  .skills-section {
+    padding: 80px 7%;
+  }
+  .section-title h2 {
+    font-size: 2.4rem;
+  }
+  .section-title p {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+  }
+  .skill-card {
+    padding: 22px;
+  }
+}
+
+/* Mobile (Portrait & Landscape) */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 70px 6%;
+  }
+  .section-title h2 {
+    font-size: 2rem;
+  }
+  .section-title p {
+    font-size: 0.9rem;
+  }
+  .skill-icon {
+    font-size: 2.2rem;
+  }
+  .skill-card h3 {
+    font-size: 0.95rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Small Mobiles (below 480px) */
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 60px 5%;
+  }
+  .section-title h2 {
+    font-size: 1.7rem;
+  }
+  .section-title p {
+    font-size: 0.85rem;
+  }
+  .skill-icon {
+    font-size: 2rem;
+  }
+  .skill-card h3 {
+    font-size: 0.9rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+
+
 
 /* Projects Section */
 .projects-section {
@@ -669,105 +884,190 @@ section {
 .experience-section {
   background: linear-gradient(135deg, #0d1117, #161b22);
   color: #fff;
-  padding: 80px 10%;
+  padding: 100px 10%;
   text-align: center;
+  overflow: hidden;
 }
 
 .experience-section .section-title h2 {
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   color: #00ffae;
+  margin-bottom: 10px;
 }
 
 .experience-section .section-title p {
   color: #c9d1d9;
-  margin-bottom: 40px;
-  font-size: 1rem;
+  margin-bottom: 60px;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin-inline: auto;
 }
 
+/* GRID */
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
 }
 
+/* CARD */
 .experience-item {
-  background: #0d1117;
-  border: 1px solid rgba(0, 255, 174, 0.3);
-  border-radius: 16px;
-  padding: 30px 25px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 174, 0.25);
+  border-radius: 20px;
+  padding: 35px 28px;
   text-align: left;
-  position: relative;
-  overflow: hidden;
-  transition: 0.4s ease;
+  transition: all 0.45s ease;
+  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.05);
+  backdrop-filter: blur(12px);
+  cursor: default;
 }
 
-.experience-item::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 0%;
-  height: 0%;
-  background: linear-gradient(135deg, #00ffae, #00e6a0);
-  transition: 0.5s ease;
-  border-radius: 16px;
-  z-index: 0;
-  opacity: 0.3;
+.experience-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #00ffae;
+  box-shadow: 0 15px 40px rgba(0, 255, 174, 0.3);
 }
 
-.experience-item:hover::before {
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-}
-
+/* ICON */
 .experience-item i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #00ffae;
-  margin-bottom: 15px;
-  z-index: 1;
-  position: relative;
+  margin-bottom: 18px;
+  transition: transform 0.4s ease;
 }
 
+.experience-item:hover i {
+  transform: rotateY(180deg);
+}
+
+/* TEXT */
 .experience-item h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
   color: #fff;
-  z-index: 1;
-  position: relative;
 }
 
 .experience-item p {
   color: #c9d1d9;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
-  z-index: 1;
-  position: relative;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
-.experience-item .duration {
-  display: block;
-  font-weight: 600;
+.duration {
+  display: inline-block;
   color: #00ffae;
+  font-weight: 600;
   margin-top: 5px;
-  font-size: 0.9rem;
-  z-index: 1;
-  position: relative;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
 
-.experience-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 255, 174, 0.2);
+/* Glow Overlay */
+.experience-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 174, 0.15), rgba(0, 212, 255, 0.1));
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-/* Responsive */
+.experience-item:hover::before {
+  opacity: 1;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+/* MacBook & Large Laptops */
+@media (max-width: 1440px) {
+  .experience-section {
+    padding: 90px 8%;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .experience-section {
+    padding: 80px 7%;
+  }
+  .experience-section .section-title h2 {
+    font-size: 2.3rem;
+  }
+  .experience-section .section-title p {
+    font-size: 0.95rem;
+    margin-bottom: 45px;
+  }
+  .experience-grid {
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  }
+  .experience-item {
+    padding: 30px 24px;
+  }
+  .experience-item h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile Devices */
 @media (max-width: 768px) {
+  .experience-section {
+    padding: 70px 6%;
+  }
+  .experience-section .section-title h2 {
+    font-size: 2rem;
+  }
+  .experience-section .section-title p {
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+  }
   .experience-grid {
     grid-template-columns: 1fr;
+    gap: 22px;
   }
   .experience-item {
     text-align: center;
+    padding: 25px 20px;
+  }
+  .experience-item i {
+    font-size: 2rem;
+  }
+  .experience-item h3 {
+    font-size: 1.05rem;
+  }
+  .experience-item p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .duration {
+    font-size: 0.85rem;
+  }
+}
+
+/* Small Mobile (Below 480px) */
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 60px 5%;
+  }
+  .experience-section .section-title h2 {
+    font-size: 1.7rem;
+  }
+  .experience-item {
+    padding: 22px 18px;
+  }
+  .experience-item h3 {
+    font-size: 1rem;
+  }
+  .experience-item p {
+    font-size: 0.85rem;
+  }
+  .experience-item i {
+    font-size: 1.8rem;
   }
 }
 
@@ -855,7 +1155,7 @@ section {
   text-align: right;
 }
 
-
+/* contact sec */
 .contact-section {
   background: linear-gradient(135deg, #0d1117, #161b22);
   color: #fff;
@@ -919,8 +1219,6 @@ section {
     padding: 10px 20px;
   }
 }
-
-
 
 /* Footer Section */
 footer {
@@ -1013,9 +1311,6 @@ footer {
     gap: 30px;
   }
 }
-
-
-
 </style>
 <body>
      <!-- ✅ Navbar -->
@@ -1035,7 +1330,6 @@ footer {
   </ul>
 </nav>
 
-
   <!-- Hero Section -->
 <section class="hero" id="home">
   <div class="text">
@@ -1043,13 +1337,13 @@ footer {
     <h2>I'm Abdul Hadi</h2>
     <div id="typed"></div>
     <p>
-      I design and develop high performance, user friendly websites that solve real business challenges,
-      boost engagement, and drive measurable growth using HTML, CSS, JavaScript, PHP, Laravel, and ASP.NET Core.
+      I build digital experiences that solve problems, not just look good.
+From idea to launch, I help businesses grow with high-performance websites and mobile apps that attract, engage, and convert.
     </p>
 
     <div class="hero-buttons">
       <a href="#contact" class="hero-btn">LET’S WORK TOGETHER</a>
-      <a href="images/Abdul Hadi CV.pdf" class="download-btn" download>📄 DOWNLOAD CV</a>
+      
     </div>
   </div>
 
@@ -1058,192 +1352,221 @@ footer {
   </div>
 </section>
 
-  <!-- About Me Section -->
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <div class="about-heading">
-        <h2>About Me</h2>
-        <p>Delivering web and mobile solutions that solve business problems and drive measurable growth.</p>
+ <!-- About Me Section -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <div class="about-heading">
+      <h2>About Me</h2>
+      <p>Delivering web and mobile solutions that solve business problems and drive measurable growth.</p>
+    </div>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I’m <strong>Abdul Hadi</strong> — a passionate Full Stack Web and Mobile App Developer dedicated to building responsive, user-centric, and high-performance digital solutions.</p>
+        <p>I specialize in both front-end and back-end technologies, including <strong>HTML, CSS, JavaScript, PHP, Laravel, ASP.NET Core, ASP.NET Web API, Flutter, Dart, and Azure</strong>.</p>
+        <p>Over the years, I’ve worked with clients across diverse industries to craft websites and mobile apps that solve real business challenges and deliver measurable results. From e-commerce platforms to cloud-based systems, API integrations, and mobile applications — I focus on writing clean code, creating elegant designs, and building scalable solutions that drive growth.</p>
+        <p>Let’s collaborate to transform your ideas into smart, efficient, and impactful digital realities.</p>
       </div>
-      <div class="about-content">
-       <div class="about-text">
-  <p>
-    I'm <strong>Abdul Hadi</strong>, a passionate full stack web and mobile app developer creating responsive, user centric, and high performance digital solutions. I specialize in front end and back end technologies including <strong>HTML, CSS, JavaScript, PHP, Laravel, ASP.NET Core, ASP.NET Web API, Flutter, Dart, and Azure</strong>.
-  </p>
-  <p>
-    I’ve collaborated with clients across diverse industries to build websites and mobile applications that solve real business challenges. From custom WordPress themes and e commerce platforms to cloud based solutions, API integrations, and mobile apps, I deliver clean code, attractive design, and measurable business impact.
-  </p>
-  <p>
-    Let’s work together to turn your ideas into scalable, efficient, and impactful digital solutions.
-  </p>
-</div>
 
-
-        <div class="about-highlights">
-          <div class="highlight-box">
-            <h3>Full Stack</h3>
-            <p>Development</p>
-          </div>
-          <div class="highlight-box">
-            <h3>Client Focused</h3>
-            <p>Solutions</p>
-          </div>
+      <div class="about-highlights">
+        <div class="highlight-box">
+          <h3>Full Stack</h3>
+          <p>Development</p>
+        </div>
+        <div class="highlight-box">
+          <h3>Client Focused</h3>
+          <p>Solutions</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section id="services" class="services-section">
-  <div class="container">
-    <h2 class="section-title">What I Do</h2>
-    <div class="services-grid">
-      
-      <div class="service-card">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Web Design</h3>
-        <p>Modern and user-friendly UI/UX designs with pixel-perfect layouts.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Custom websites with PHP, Laravel, WordPress and MySQL integration.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Responsive Design</h3>
-        <p>Mobile-friendly websites that work smoothly on all devices.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-shopping-cart"></i>
-        <h3>E-commerce Solutions</h3>
-        <p>Professional online stores with secure payment integration.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-tools"></i>
-        <h3>Website Maintenance</h3>
-        <p>Fixing issues, regular updates and secure backup management.</p>
-      </div>
-
-      <div class="service-card">
-        <i class="fas fa-rocket"></i>
-        <h3>Performance Optimization</h3>
-        <p>Speed improvements, caching, and optimized user experience.</p>
-      </div>
-
     </div>
   </div>
 </section>
 
 
- <!-- Skills Section -->
+ <!-- ======= WHAT I DO / SERVICES (Updated & Ready to Paste) ======= -->
+<section id="services" class="services-section">
+  <div class="container">
+    <h2 class="section-title">What I Do</h2>
+    <p class="section-subtitle">
+      I create powerful digital experiences that combine design, functionality, and performance.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon-wrapper"><i class="fas fa-file-code"></i></div>
+        <h3>Static Website Development</h3>
+        <p>Create fast, secure, and visually appealing static websites optimized for performance and responsiveness.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrapper"><i class="fas fa-sync-alt"></i></div>
+        <h3>Dynamic Web Applications</h3>
+        <p>Build dynamic, data-driven web applications that deliver seamless user experiences using modern frameworks and APIs.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrapper"><i class="fas fa-shopping-cart"></i></div>
+        <h3>E-commerce Solutions</h3>
+        <p>Launch high-performing online stores with secure payment integration, inventory management, and conversion-focused UX.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrapper"><i class="fas fa-laptop-code"></i></div>
+        <h3>Web Development</h3>
+        <p>From frontend to backend — robust, scalable websites using PHP, Laravel, ASP.NET Core, JavaScript and modern tooling.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrapper"><i class="fas fa-shield-alt"></i></div>
+        <h3>Security Solutions</h3>
+        <p>Protect your web assets with secure coding, HTTPS, authentication, and best-practice vulnerability hardening.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-wrapper"><i class="fas fa-headset"></i></div>
+        <h3>Customer Support</h3>
+        <p>Ongoing maintenance, updates and responsive support to keep your website fast, secure, and up-to-date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SKILLS SECTION ==================== -->
 <section id="skills" class="skills-section">
   <div class="skills-container">
     <div class="section-title">
       <h2>My Skills</h2>
-      <p>Technologies I use with proficiency to deliver top-notch web and mobile solutions</p>
+      <p>I combine creativity with technical mastery to build seamless, high-performance web and mobile solutions.</p>
     </div>
 
     <div class="skills-grid">
-      <!-- Skill Item -->
-      <div class="skill">
-        <div class="skill-header">
-          <span>HTML5</span>
-          <span class="percent">95%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:95%;"></div>
-        </div>
+
+      <div class="skill-card" data-percent="95">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+        <h3>HTML5</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>CSS3</span>
-          <span class="percent">90%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:90%;"></div>
-        </div>
+      <div class="skill-card" data-percent="90">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+        <h3>CSS3</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>JavaScript</span>
-          <span class="percent">85%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:85%;"></div>
-        </div>
+      <div class="skill-card" data-percent="90">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-js"></i></div>
+        <h3>JavaScript</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>ASP.NET Core MVC</span>
-          <span class="percent">95%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:95%;"></div>
-        </div>
+      <div class="skill-card" data-percent="95">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <h3>ASP.NET Core MVC</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>ASP.NET Web API</span>
-          <span class="percent">90%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:90%;"></div>
-        </div>
+      <div class="skill-card" data-percent="95">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-server"></i></div>
+        <h3>RESTful APIs (ASP.NET Web API)</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-     
-      <div class="skill">
-        <div class="skill-header">
-          <span>PHP/Laravel</span>
-          <span class="percent">90%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:90%;"></div>
-        </div>
+      <div class="skill-card" data-percent="90">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-laravel"></i></div>
+        <h3>PHP / Laravel</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>Flutter</span>
-          <span class="percent">85%</span>
+      <!-- Flutter & Dart combined -->
+      <div class="skill-card" data-percent="85">
+        <div class="skill-glow"></div>
+        <div class="skill-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="skill-img">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" class="skill-img">
         </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:85%;"></div>
-        </div>
+        <h3>Flutter &amp; Dart</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>Dart</span>
-          <span class="percent">85%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:85%;"></div>
-        </div>
+      <div class="skill-card" data-percent="80">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-file-code"></i></div>
+        <h3>XML</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
-      <div class="skill">
-        <div class="skill-header">
-          <span>Azure</span>
-          <span class="percent">80%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress" style="width:80%;"></div>
-        </div>
+      <div class="skill-card" data-percent="90">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-file-code"></i></div>
+        <h3>JSON</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
+      </div>
+
+      <div class="skill-card" data-percent="92">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-bootstrap"></i></div>
+        <h3>Bootstrap 5</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
+      </div>
+
+      <div class="skill-card" data-percent="88">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-code"></i></div>
+        <h3>jQuery</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
+      </div>
+
+      <div class="skill-card" data-percent="88">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>AJAX</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
+      </div>
+
+      <div class="skill-card" data-percent="82">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fas fa-fire"></i></div>
+        <h3>Firebase</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
+      </div>
+
+      <div class="skill-card" data-percent="90">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+        <h3>Git</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
+      </div>
+
+      <div class="skill-card" data-percent="92">
+        <div class="skill-glow"></div>
+        <div class="skill-icon"><i class="fab fa-github"></i></div>
+        <h3>GitHub</h3>
+        <div class="progress-bar"><div class="progress"></div></div>
+        <span class="percent">0%</span>
       </div>
 
     </div>
   </div>
 </section>
-
 
 <!-- Projects Section -->
 <section id="projects" class="projects-section">
@@ -1363,15 +1686,16 @@ footer {
 <section id="experience" class="experience-section">
   <div class="section-title">
     <h2>Experience & Certifications</h2>
-    <p>Highlights of my professional journey and expertise</p>
+    <p>Highlights of my professional journey and technical expertise.</p>
   </div>
 
   <div class="experience-grid">
+
     <!-- Card 1 -->
     <div class="experience-item">
       <i class="fas fa-code"></i>
       <h3>Freelance Full-Stack Developer</h3>
-      <p>Developed scalable and performance-driven websites using Laravel, PHP, and JavaScript for clients worldwide. Focused on clean UI and secure backend integration.</p>
+      <p>Built high-performing, scalable websites using Laravel, PHP, and JavaScript for global clients — focusing on clean UI and secure backend integration.</p>
       <span class="duration">2022 — Present</span>
     </div>
 
@@ -1379,7 +1703,7 @@ footer {
     <div class="experience-item">
       <i class="fas fa-laptop-code"></i>
       <h3>Frontend Developer – Digital Dreams</h3>
-      <p>Designed modern, responsive interfaces with optimized performance. Implemented interactive UI components and animations using CSS & JS frameworks.</p>
+      <p>Created responsive and modern interfaces with optimized performance and interactive animations using CSS & JavaScript frameworks.</p>
       <span class="duration">2021 — 2023</span>
     </div>
 
@@ -1387,7 +1711,7 @@ footer {
     <div class="experience-item">
       <i class="fas fa-server"></i>
       <h3>Backend Developer (Laravel / .NET Core)</h3>
-      <p>Built and managed RESTful APIs, admin dashboards, and authentication systems. Specialized in database design, migrations, and Eloquent ORM.</p>
+      <p>Developed RESTful APIs, admin dashboards, and authentication systems. Specialized in database design, migrations, and Eloquent ORM.</p>
       <span class="duration">2020 — 2022</span>
     </div>
 
@@ -1395,7 +1719,7 @@ footer {
     <div class="experience-item">
       <i class="fas fa-mobile-alt"></i>
       <h3>Mobile App Developer (Flutter / Dart)</h3>
-      <p>Developed cross-platform mobile apps with Firebase integration. Focused on clean architecture, API handling, and responsive layouts for Android & iOS.</p>
+      <p>Built cross-platform mobile apps integrated with Firebase. Focused on clean architecture, API integration, and responsive layouts for Android & iOS.</p>
       <span class="duration">2020 — 2021</span>
     </div>
 
@@ -1403,20 +1727,19 @@ footer {
     <div class="experience-item">
       <i class="fas fa-graduation-cap"></i>
       <h3>Certification – Advanced JavaScript</h3>
-      <p>Mastered ES6+, async programming, and API integration. Created dynamic dashboards and real-time data visualizations for client projects.</p>
+      <p>Mastered ES6+, async programming, and real-time API integration. Built dynamic dashboards and visualization projects.</p>
       <span class="duration">Certified in 2023</span>
     </div>
 
     <!-- Card 6 -->
-    <div class="experience-item">
-      <i class="fas fa-certificate"></i>
-      <h3>Certification – WordPress Custom Development</h3>
-      <p>Learned custom theme and plugin development with SEO and performance optimization. Built responsive WordPress websites for business clients.</p>
+     <div class="experience-item">
+      <i class="fas fa-plug"></i>
+      <h3>Certification – API Development & Integration</h3>
+      <p>Mastered building and integrating RESTful APIs with Laravel and .NET Core, enabling seamless data flow across web and mobile applications.</p>
       <span class="duration">Certified in 2022</span>
     </div>
   </div>
 </section>
-
 
 <!-- =================== TESTIMONIALS =================== -->
 <section id="testimonials" class="testimonials-section">
@@ -1446,7 +1769,6 @@ footer {
   </div>
 </section>
 
-
 <!-- =================== CONTACT SECTION =================== -->
 <section id="contact" class="contact-section">
   <div class="section-title">
@@ -1472,12 +1794,6 @@ footer {
     window.open("https://mail.google.com/mail/?view=cm&fs=1&to=abdulhadih72590@gmail.com");
   }
 </script>
-
-
-
-
-
-
 
 <footer>
   <div class="footer-container">
@@ -1525,16 +1841,13 @@ footer {
 
   <!-- Footer Bottom -->
   <div class="footer-bottom">
-   <p>&copy; 2025 Abdul Hadi. All Rights Reserved | Web & Mobile Solutions</p>
+   <p> Abdul Hadi — Turning Ideas into Powerful Digital Realities.</p>
+
 
   </div>
 </footer>
 
-
-
-
-
-  <script>
+<script>
 
     // navbar
 // Navbar toggle
@@ -1571,10 +1884,6 @@ allLinks.forEach(link => {
 });
 
 
-
-
-
-
 // hero
 
 // Typing effect
@@ -1598,9 +1907,43 @@ seeMoreBtn.addEventListener('click', () => {
   hiddenProjects.forEach(card => card.style.display = 'block');
   seeMoreBtn.style.display = 'none'; // hide button after click
 });
+// skills section
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".skill-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const percent = parseInt(card.getAttribute("data-percent") || "0", 10);
+        const progress = card.querySelector(".progress");
+        const counter = card.querySelector(".percent");
+
+        progress.style.transition = "width 1.8s cubic-bezier(.2,.9,.2,1)";
+        progress.style.width = percent + "%";
+
+        let current = 0;
+        const step = Math.max(1, Math.floor(percent / 40));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= percent) {
+            counter.textContent = percent + "%";
+            clearInterval(interval);
+          } else {
+            counter.textContent = current + "%";
+          }
+        }, 18);
+
+        observer.unobserve(card);
+      }
+    });
+  }, { threshold: 0.38 });
+
+  cards.forEach(card => observer.observe(card));
+});
 
 
-// cta
 
 
   </script>
